@@ -1,0 +1,41 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../base/mixins";
+
+// Form inline
+.rd-form-inline {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	@include group( px-to-rem( 20px ), px-to-rem( 15px ) );
+
+	.form-group {
+		flex-grow: 1;
+	}
+
+	.btn {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		flex-shrink: 0;
+		margin-top: 0;
+		min-width: 0;
+	}
+}
+
+
+// Spacing
+* + .rd-form { margin-top: px-to-rem( 54px * $xs-multiplier ) }
+* + .rd-form-btn { margin-top: px-to-rem( 60px * $xs-multiplier ) }
+
+@include media-breakpoint-up( lg ) {
+	* + .rd-form { margin-top: px-to-rem( 54px * $lg-multiplier ) }
+	* + .rd-form-btn { margin-top: px-to-rem( 60px * $lg-multiplier ) }
+}
+
+@include media-breakpoint-up( xxl ) {
+	* + .rd-form { margin-top: px-to-rem( 54px ) }
+	* + .rd-form-btn { margin-top: px-to-rem( 60px ) }
+}
